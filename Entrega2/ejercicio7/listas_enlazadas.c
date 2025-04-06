@@ -7,38 +7,38 @@ struct Node {
     struct Node* next; // El siguiente nodo corresponde a la dirección de memoria del siguiente nodo (es de tipo struct Node y con la referencia *)
 }; 
 
-// NOTAAAA: Para acceder a la estructura es necesario crear una variable de tipo struct Node.
+// NOTA: Para acceder a la estructura es necesario crear una variable de tipo struct Node.
 
 void insertar_nodo_final(struct Node** head, int value){
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node)); // Crear un nuevo nodo
     newNode->data = value;  // Asignar el valor al nuevo nodo
-    newNode->next = NULL; 
+    newNode->next = NULL;  // Inicializar el siguiente nodo como NULL
 
     if (*head == NULL){
         *head = newNode; // Si la lista está vacía, el nuevo nodo es el primero
     }
     else {
         struct Node* current = *head; // Crear un puntero auxiliar para recorrer la lista
-        while (current->next != NULL){
+        while (current->next != NULL){ // Mientras no haya llegado hasta el último nodo
             current = current->next; // Avanzar al siguiente nodo
         }
-        current->next = newNode; // Asignar el nuevo nodo al final de la lista
+        current->next = newNode; // Asignar el nuevo nodo al final de la lista cuando se encuentre en el último nodo
         }
     }
 
 void imprimir_lista(struct Node* head){
-    if (head == NULL){
+    if (head == NULL){ // Verificar si la lista está vacía
         printf("La lista está vacía.\n");
         return;
     }
 
     struct Node* current = head; // Crear un puntero auxiliar para recorrer la lista
     while (current != NULL){
-        printf("%d -> ", current->data); // Imprimir el valor del nodo actual
+        printf("%d -> ", current->data); // Imprimir el VALOR del nodo actual
         current = current->next; // Avanzar al siguiente nodo
     }
 
-    printf("NULL\n"); // Indicar el final de la lista
+    printf("NULL\n"); // Indicar el final de la lista cuando se recorra toda
     }
 
 int eliminar_nodo(struct Node** head, int value){
@@ -79,7 +79,7 @@ int main(){
     printf("Lista enlazada: ");
     imprimir_lista(head); // Imprimir la lista enlazada
 
-    printf("Eliminando 10...\n");
+    printf("Eliminando 20...\n");
     eliminar_nodo(&head, 20);
     imprimir_lista(head); // Imprimir la lista enlazada
 
