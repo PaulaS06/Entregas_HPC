@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <omp.h>
 
-#define M 3  // Filas de A y filas de C
-#define N 2  // Columnas de A y filas de B
-#define P 3  // Columnas de B y columnas de C
+#define M 1000  // Filas de A y filas de C
+#define N 1000  // Columnas de A y filas de B
+#define P 1000  // Columnas de B y columnas de C
 
 int main() {
     // Reservar memoria
@@ -50,12 +50,12 @@ int main() {
     printf("Tiempo secuencial: %f segundos\n", t_fin - t_ini);
 
     // Imprimir la matriz resultante C
-    printf("Matriz resultante C:\n");
+    // printf("Matriz resultante C:\n");
     for (int i = 0; i < M; i++) {
         for (int j = 0; j < P; j++) {
-            printf("%f ", C[i][j]);
+            //printf("%f ", C[i][j]);
         }
-        printf("\n");
+        //printf("\n");
     }
 
     // Liberar memoria

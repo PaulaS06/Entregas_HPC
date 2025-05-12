@@ -4,7 +4,7 @@
 #include <omp.h>
 
 int main(){
-    int N = 1000000; // Tamaño del vector
+    int N = 10000000; // Tamaño del vector
     double *A = (double*) malloc(N * sizeof(double));
     double *B = (double*) malloc(N * sizeof(double));
     double dot = 0.0;
